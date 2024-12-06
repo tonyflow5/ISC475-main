@@ -1,0 +1,162 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('vivsun.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    color: #fff;
+    margin: 0;
+}
+
+/* Header Styling */
+header h1 {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 70px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+header p {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 42px;
+    margin: 0 0 10px;
+    color: white;
+}
+
+/* Form Container */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Group Styling */
+.label-input-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.label-input-group label {
+    font-weight: bold;
+    color: #000;
+    margin-right: 15px;
+    min-width: 100px;
+}
+
+.label-input-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.label-input-group input::placeholder {
+    color: #aaa;
+}
+
+.label-input-group .search-icon,
+.label-input-group .calendar-icon {
+    font-size: 20px;
+    color: #ccc;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Date Fields */
+.date-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.date-group {
+    width: 48%;
+    position: relative;
+}
+
+.date-group input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.date-group input::placeholder {
+    color: #aaa;
+}
+
+/* Travellers Section */
+.travellers-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.travellers {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: black;
+    width: 48%;
+}
+
+.travellers label {
+    margin-right: 10px;
+    min-width: 70px;
+}
+
+.travellers select {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+/* Search Button */
+.search-button {
+    max-width: 200px;
+    padding: 12px;
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #b8902f;
+}

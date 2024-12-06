@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effortless Escapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Effortless Escapes</h1>
+        <p>Your Journey Awaits</p>
+    </header>
+
+    <div class="container">
+        <form action="/search" method="POST">
+            <!-- Start Location Field -->
+            <div class="label-input-group start-location-group">
+                <label for="start-location">Start Location:</label>
+                <input type="text" id="start-location" name="start_location" placeholder="Enter starting point" required>
+            </div>
+
+            <!-- Destination Field -->
+            <div class="label-input-group destination-group">
+                <label for="destination">Description:</label>
+                <input type="text" id="destination" name="destination" placeholder="Places to go... Things to do" required>
+                <span class="search-icon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+
+            <!-- Date Fields -->
+            <div class="date-fields">
+                <div class="label-input-group date-group">
+                    <label for="check-in">Check-In:</label>
+                    <input type="text" id="check-in" name="check-in" placeholder="mm/dd/yyyy" required>
+                    <span class="calendar-icon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+
+                <div class="label-input-group date-group">
+                    <label for="check-out">Check-Out:</label>
+                    <input type="text" id="check-out" name="check-out" placeholder="mm/dd/yyyy" required>
+                    <span class="calendar-icon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Travellers Section -->
+            <div class="travellers-group">
+                <div class="travellers">
+                    <label for="travellers">Travellers:</label>
+                    <select id="adults" name="num_adults" required>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="search-button">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        Created by Damani Johnson and Anthony Flores (Pic Credits www.canva.com)
+    </footer>
+</body>
+
+</html>

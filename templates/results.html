@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Effortless Escapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <h1>Effortless Escapes</h1>
+    </div>
+
+    <!-- Banner Image -->
+    <div class="banner"></div>
+
+    <div class="container">
+        <form action="/search" method="POST">
+            <div class="label-input-group-container">
+                <!-- Start Location Field -->
+                <div class="label-input-group start-location-group">
+                    <label for="start-location">Start Location:</label>
+                    <input type="text" id="start-location" name="start_location" 
+                           value="{{ request.form['start_location'] }}" placeholder="Enter starting point" required>
+                </div>
+            
+                <!-- Destination Field -->
+                <div class="label-input-group destination-group">
+                    <label for="destination">Description:</label>
+                    <input type="text" id="destination" name="destination" 
+                           value="{{ request.form['destination'] }}" placeholder="Places to go... Things to do" required autofocus>
+                    <span class="search-icon"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+
+            <!-- Date Fields -->
+            <div class="date-fields">
+                <div class="label-input-group date-group">
+                    <label for="check-in">Check-In:</label>
+                    <input type="text" id="check-in" name="check-in" 
+                           value="{{ request.form['check-in'] }}" placeholder="mm/dd/yyyy" required>
+                    <span class="calendar-icon"><i class="fa fa-calendar"></i></span>
+                </div>
+
+                <div class="label-input-group date-group">
+                    <label for="check-out">Check-Out:</label>
+                    <input type="text" id="check-out" name="check-out" 
+                           value="{{ request.form['check-out'] }}" placeholder="mm/dd/yyyy" required>
+                    <span class="calendar-icon"><i class="fa fa-calendar"></i></span>
+                </div>
+
+                <div class="travellers">
+                    <label for="travellers">Travellers:</label>
+                    <select id="adults" name="num_adults" required>
+                        <option value="1" {% if request.form['num_adults'] == '1' %}selected{% endif %}>1 Adult</option>
+                        <option value="2" {% if request.form['num_adults'] == '2' %}selected{% endif %}>2 Adults</option>
+                        <option value="3" {% if request.form['num_adults'] == '3' %}selected{% endif %}>3 Adults</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Search Button -->
+            <div class="travellers-group">
+                <button type="submit" class="search-button">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="results-tag">
+        <h1>Based on your input, the best travel location is ...</h1>
+    </div>
+    
+    <!-- Display Result Data -->
+    <div class="result-container">
+        <div class="main-box">
+            <div class="content-section">
+                <h3>{{ location_name }}</h3>
+                <p><strong>Location:</strong> {{ city }}, {{ state }}</p>
+                <p><strong>Avg Flight Price:</strong> ${{ avg_flight_price }}</p>
+                <p><strong>Low Temperature:</strong> {{ avg_temp_low_f }}°F</p>
+                <p><strong>High Temperature:</strong> {{ avg_temp_high_f }}°F</p>
+                <br>
+                <p><strong>Avg Rating:</strong> {{ average_rating }}</p>
+                <p><strong>What they are saying:</strong> <em>"{{ review_text }}"</em></p>
+            </div>
+            <div class="image-section">
+                <img src="{{ location_photo_url }}" alt="Location Photo" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+        
+        <div class="suggestions">
+            <h1>Other Destinations You Should Consider</h1>
+        </div>
+
+        <div class="other-suggestions">
+            <ul>
+                {% for location in additional_suggestions %}
+                    <li>
+                        <button class="location-option" onclick="updateDestination('{{ location[0] }}')">
+                            {{ location[0] }} - {{ location[1] }}, {{ location[2] }}
+                        </button>
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+            <br>
+        </div>
+    </div>
+    <script>
+        function updateDestination(locationName) {
+            const destinationInput = document.getElementById('destination');
+            destinationInput.value = locationName;
+            destinationInput.form.submit();
+        }
+    </script>
+</body>
+</html>

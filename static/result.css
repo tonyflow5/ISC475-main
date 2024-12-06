@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    background-color: #9F4B5F;
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.top-bar h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+    color: white;
+}
+
+.banner {
+    width: 100%;
+    height: 285px;
+    background: url('./vivsun.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    top: -235px;
+    margin-top: -20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.label-input-group-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.label-input-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    position: relative;
+    flex: 1;
+}
+
+.start-location-group,
+.destination-group {
+    width: 48%;
+}
+
+.label-input-group input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.label-input-group input::placeholder {
+    color: #aaa;
+}
+
+.label-input-group .search-icon,
+.label-input-group .calendar-icon {
+    display: inline-block;
+    font-size: 20px;
+    color: #ccc;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.date-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.date-group {
+    width: 48%;
+    position: relative;
+}
+
+.date-group input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.travellers-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.travellers {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    margin-bottom: 15px;
+    width: 30%;
+}
+
+.travellers label {
+    color: black;
+    margin-right: 10px;
+    min-width: 70px;
+}
+
+.travellers select {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.search-button {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    background-color: #9F4B5F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #9f4b5f8f;
+}
+
+.results-tag {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin-top: -190px;
+    color: #9F4B5F;
+    font-size: 24px;
+    z-index: 2;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    max-width: 700px;
+}
+
+.content-section {
+    flex: 2;
+    padding: 20px;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #b24579;
+}
+
+.content-section p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+.content-section p strong {
+    font-weight: bold;
+}
+
+.image-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.image-section img {
+    transform: scale(1.8);
+    object-fit: cover;
+    object-position: center top;
+    margin-top: 40px;
+}
+
+.suggestions {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin-top: 40px;
+    color: #000;
+    font-size: 15px;
+}
+
+.other-suggestions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.other-suggestions ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.other-suggestions li {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.location-option {
+    text-decoration: underline; /* Always underlined */
+    color: blue; /* Text color blue */
+    background: none; /* Remove button background */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Indicate clickable element */
+    font-size: inherit; /* Ensure the text inherits the correct font size */
+    padding: 0; /* Remove padding */
+}
+.location-option:hover {
+    text-decoration: underline;
+}
